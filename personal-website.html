@@ -3,71 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devansh Deepak</title>
+    <title>Devansh Deepak - Personal Website</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #6d5b97, #6a82fb);
+            background-color: #f4f4f4;
             color: #333;
         }
         header {
-            background: #fff;
-            color: #333;
-            padding: 1em;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 0;
             text-align: center;
-            width: 100%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        main {
-            background: #fff;
-            padding: 2em;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            width: 100%;
-            margin: 2em;
-            border-radius: 8px;
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
         }
-        footer {
-            background: #fff;
-            color: #333;
-            padding: 1em;
+        .intro {
             text-align: center;
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
-        a {
-            color: #6a82fb;
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-links a {
             text-decoration: none;
-        }
-        h1, h2, p {
-            margin: 0.5em 0;
-        }
-        p {
-            line-height: 1.6;
+            color: #3498db;
+            margin: 0 10px;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Devansh Deepak</h1>
+        <p>Welcome to my personal website</p>
     </header>
-    <main>
-        <h2>Welcome to My Personal Website</h2>
-        <p>Hi, I'm Devansh Deepak. This is my personal website where you can learn more about me and my work.</p>
-        <img src="https://my.b12.io/preview.jpg" alt="Preview image" style="max-width: 100%; height: auto; border-radius: 8px;">
-        <p>Once you sign up, you can customize your website further and explore all the features available. You can publish it for free. We can't wait to see what you do with it!</p>
-    </main>
-    <footer>
-        <p>&copy; 2024 Devansh Deepak. All rights reserved.</p>
-    </footer>
+    <div class="container">
+        <section class="intro">
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm Devansh Deepak, a passionate individual interested in [your interests/profession]. 
+                I love to explore new ideas and engage in exciting projects. 
+                Feel free to connect with me through the links below!
+            </p>
+        </section>
+        <section class="social-links">
+            <h2>Connect with Me</h2>
+            <a href="https://www.linkedin.com/in/devanshdeepak/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/devanshdeepak" target="_blank">GitHub</a>
+            <a href="https://twitter.com/devanshdeepak" target="_blank">Twitter</a>
+        </section>
+    </div>
 </body>
 </html>
