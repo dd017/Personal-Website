@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devansh Deepak - Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #6200ee;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .about,
+        .contact {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Devansh Deepak's Website</h1>
+        <p>A student exploring the world of technology and design.</p>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="content">
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm Devansh Deepak, a student passionate about technology, design, and learning new skills. I love exploring different areas of technology and finding creative solutions to problems.</p>
+            <p>In my free time, I enjoy reading, coding, and participating in tech-related projects. I aspire to work in a field that allows me to make a positive impact on the world through technology.</p>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <p>If you'd like to get in touch, feel free to reach out to me through any of the platforms below:</p>
+            <ul>
+                <li>Email: devanshdeepak@example.com</li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/devanshdeepak" target="_blank">Devansh Deepak</a></li>
+                <li>GitHub: <a href="https://github.com/devanshdeepak" target="_blank">github.com/devanshdeepak</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Devansh Deepak. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
