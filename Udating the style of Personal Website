@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devansh Deepak - Personal Website</title>
+    <style>
+        /* Resetting default styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f5;
+            color: #444;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6200ee, #3700b3);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        nav {
+            background-color: #333;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 15px 20px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .section {
+            width: 100%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .section ul {
+            list-style-type: none;
+        }
+
+        .section ul li {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .section a {
+            color: #6200ee;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .section a:hover {
+            color: #3700b3;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 20px 10px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav a {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Devansh Deepak's Website</h1>
+        <p>A student exploring the world of technology and design.</p>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="content">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Hello! I'm Devansh Deepak, a student passionate about technology, design, and learning new skills. I love exploring different areas of technology and finding creative solutions to problems.</p>
+            <p>In my free time, I enjoy reading, coding, and participating in tech-related projects. I aspire to work in a field that allows me to make a positive impact on the world through technology.</p>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>If you'd like to get in touch, feel free to reach out to me through any of the platforms below:</p>
+            <ul>
+                <li>Email: <a href="mailto:devanshdeepak@example.com">devanshdeepak@example.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/devanshdeepak" target="_blank">Devansh Deepak</a></li>
+                <li>GitHub: <a href="https://github.com/devanshdeepak" target="_blank">github.com/devanshdeepak</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Devansh Deepak. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
