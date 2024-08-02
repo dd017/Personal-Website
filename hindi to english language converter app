@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi to English Translator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-text, .output-text {
+            width: 100%;
+            padding: 1em;
+            font-size: 1em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            padding: 0.5em 1em;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hindi to English Translator</h1>
+        <textarea id="input-text" class="input-text" placeholder="Enter Hindi text"></textarea>
+        <button class="btn" onclick="translateText()">Translate</button>
+        <textarea id="output-text" class="output-text" placeholder="English translation" readonly></textarea>
+    </div>
+
+    <script>
+        async function translateText() {
+            const inputText = document.getElementById('input-text').value;
+            if (inputText) {
+                const response = await fetch('/api/translate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ text: inputText })
+                });
+                const data = await response.json();
+                document.getElementById('output-text').textContent = data.translatedText;
+            } else {
+                alert('Please enter some text.');
+            }
+        }
+    </script>
+</body>
+</html>
