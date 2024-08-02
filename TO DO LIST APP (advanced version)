@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.5em 0;
+        }
+        .btn {
+            padding: 0.5em 1em;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+        .task-input, .date-input {
+            padding: 0.5em;
+            font-size: 1em;
+            margin-right: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <div class="task">
+            <input type="text" id="task-input" class="task-input" placeholder="New task">
+            <input type="datetime-local" id="date-input" class="date-input">
+            <button class="btn" onclick="addTask()">Add Task</button>
+        </div>
+        <ul id="task-list"></ul>
+    </div>
+
+    <script>
+        const taskList = document.getElementById('task-list');
+
+        function addTask() {
+            const taskInput = document.getElementById('task-input');
+            const dateInput = document.getElementById('date-input');
+            const task = taskInput.value;
+            const date = dateInput.value;
+
+            if (task && date) {
+                const listItem = document.createElement('li');
+                listItem.className = 'task';
+                listItem.innerHTML = `${task} <button class="btn" onclick="removeTask(this)">Delete</button>`;
+                taskList.appendChild(listItem);
+                
+                scheduleAlarm(task, date);
+                taskInput.value = '';
+                dateInput.value = '';
+            } else {
+                alert('Please enter both a task and a date/time.');
+            }
+        }
+
+        function removeTask(button) {
+            const listItem = button.parentElement;
+            taskList.removeChild(listItem);
+        }
+
+        function scheduleAlarm(task, date) {
+            const alarmTime = new Date(date).getTime() - Date.now();
+            setTimeout(() => {
+                alert(`Time for: ${task}`);
+            }, alarmTime);
+        }
+    </script>
+</body>
+</html>
