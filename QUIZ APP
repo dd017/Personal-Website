@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            padding: 0.5em 1em;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            margin: 1em;
+        }
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+        }
+        .options {
+            margin-bottom: 1em;
+        }
+        .option {
+            display: block;
+            margin: 0.5em 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="quiz-container">
+        <h1>Quiz App</h1>
+        <button class="btn" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the capital of France?",
+                options: ["Berlin", "Madrid", "Paris", "Lisbon"],
+                answer: "Paris"
+            },
+            {
+                question: "Which planet is known as the Red Planet?",
+                options: ["Earth", "Mars", "Jupiter", "Venus"],
+                answer: "Mars"
+            },
+            {
+                question: "What is the largest ocean on Earth?",
+                options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+                answer: "Pacific Ocean"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function startQuiz() {
+            document.getElementById('quiz-container').innerHTML = `
+                <div class="question" id="question"></div>
+                <div class="options" id="options"></div>
+                <button class="btn" onclick="submitAnswer()">Submit</button>
+            `;
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const optionsElement = document.getElementById('options');
+
+            const currentQuestion = questions[currentQuestionIndex];
+            questionElement.textContent = currentQuestion.question;
+
+            optionsElement.innerHTML = '';
+            currentQuestion.options.forEach(option => {
+                const optionElement = document.createElement('input');
+                optionElement.type = 'radio';
+                optionElement.name = 'option';
+                optionElement.value = option;
+                optionElement.className = 'option';
+                optionsElement.appendChild(optionElement);
+                optionsElement.innerHTML += option + '<br>';
+            });
+        }
+
+        function submitAnswer() {
+            const selectedOption = document.querySelector('input[name="option"]:checked');
+            if (selectedOption) {
+                const answer = selectedOption.value;
+                if (answer === questions[currentQuestionIndex].answer) {
+                    score++;
+                }
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            } else {
+                alert('Please select an option');
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-container').innerHTML = `
+                <h2>Your Score: ${score}/${questions.length}</h2>
+                <button class="btn" onclick="startQuiz()">Restart Quiz</button>
+            `;
+        }
+    </script>
+</body>
+</html>
