@@ -11,26 +11,29 @@
         body {
             margin: 0;
             font-family: 'Raleway', sans-serif;
-            background: linear-gradient(135deg, #1a1a1a, #333333);
-            color: #ffffff;
+            background: linear-gradient(135deg, #2e2e2e, #4a4a4a);
+            color: #e0e0e0;
             overflow-x: hidden;
+            padding-top: 60px; /* For fixed header */
         }
 
         header {
-            background-color: #111;
+            background-color: #1a1a1a;
             padding: 1rem 0;
             text-align: center;
-            position: sticky;
+            position: fixed;
             top: 0;
+            width: 100%;
             z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s;
         }
 
         header h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin: 0;
-            color: #ff6f61;
+            color: #4fd1c5;
             letter-spacing: 0.1rem;
             animation: glow 1.5s infinite alternate;
         }
@@ -44,36 +47,38 @@
         }
 
         nav ul li {
-            margin: 0 1rem;
+            margin: 0 1.5rem;
         }
 
         nav ul li a {
-            color: #ff6f61;
+            color: #4fd1c5;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s, transform 0.3s;
+            padding: 0.5rem;
         }
 
         nav ul li a:hover {
-            color: #ff9f90;
-            transform: scale(1.1);
+            color: #e0e0e0;
+            transform: translateY(-2px);
         }
 
         .section {
             padding: 4rem 2rem;
             text-align: center;
             animation: fadeIn 1s ease-in-out;
+            position: relative;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         h2 {
-            font-size: 2.5rem;
-            margin: 1rem 0;
-            color: #ff6f61;
+            font-size: 2.8rem;
+            margin: 1.5rem 0;
+            color: #4fd1c5;
             position: relative;
             display: inline-block;
         }
@@ -81,27 +86,27 @@
         h2::after {
             content: '';
             display: block;
-            width: 50%;
+            width: 60%;
             height: 4px;
-            background-color: #ff6f61;
+            background-color: #4fd1c5;
             margin: 0.5rem auto;
             border-radius: 2px;
         }
 
         p {
-            margin: 1rem 0;
-            font-size: 1.2rem;
-            line-height: 1.6;
+            margin: 1.5rem 0;
+            font-size: 1.25rem;
+            line-height: 1.7;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
         }
 
         .card {
-            background-color: #222;
+            background-color: #333;
             padding: 1.5rem;
             border-radius: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -111,76 +116,88 @@
             max-width: 100%;
             border-radius: 10px;
             margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .card img:hover {
+            transform: scale(1.05);
         }
 
         .card p {
             margin: 0;
-            font-size: 1.3rem;
-            color: #ff6f61;
+            font-size: 1.4rem;
+            color: #4fd1c5;
         }
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
 
         form {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         input, textarea, button {
             padding: 1rem;
             border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            background-color: #333;
-            color: #ffffff;
-            transition: background-color 0.3s;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            background-color: #444;
+            color: #e0e0e0;
+            transition: background-color 0.3s, border-color 0.3s;
         }
 
         input:focus, textarea:focus {
-            background-color: #444;
+            background-color: #555;
+            border-color: #4fd1c5;
         }
 
         button {
-            background-color: #ff6f61;
+            background-color: #4fd1c5;
             color: #ffffff;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
+            border-radius: 8px;
         }
 
         button:hover {
-            background-color: #ff9f90;
+            background-color: #3baaa9;
             transform: scale(1.05);
         }
 
         footer {
-            background-color: #111;
+            background-color: #1a1a1a;
             text-align: center;
             padding: 1rem;
-            color: #ffffff;
+            color: #e0e0e0;
             position: fixed;
             width: 100%;
             bottom: 0;
         }
 
         .container img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1rem;
-            border: 4px solid #ff6f61;
+            border: 4px solid #4fd1c5;
+            transition: transform 0.3s;
+        }
+
+        .container img:hover {
+            transform: scale(1.05);
         }
 
         @keyframes glow {
             from {
-                text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61, 0 0 30px #ff6f61, 0 0 40px #ff6f61;
+                text-shadow: 0 0 12px #4fd1c5, 0 0 24px #4fd1c5, 0 0 36px #4fd1c5, 0 0 48px #4fd1c5;
             }
             to {
-                text-shadow: 0 0 20px #ff9f90, 0 0 30px #ff9f90, 0 0 40px #ff9f90, 0 0 50px #ff9f90;
+                text-shadow: 0 0 24px #6cf2d1, 0 0 36px #6cf2d1, 0 0 48px #6cf2d1, 0 0 60px #6cf2d1;
             }
         }
 
@@ -223,14 +240,14 @@
         <div class="container">
             <img src="profile.jpg" alt="Devansh Deepak">
             <h2>Welcome to Devansh Deepak's World</h2>
-            <p>Discover the creativity and passion behind my work. Let's embark on this journey together!</p>
+            <p>Explore my journey, my projects, and connect with me. Dive into a world of creativity and innovation!</p>
         </div>
     </section>
 
     <section id="about" class="section">
         <div class="container">
             <h2>About Me</h2>
-            <p>Hi, I'm Devansh Deepak, a passionate web developer with a knack for creating visually stunning and highly functional websites. I thrive on innovation and strive to bring unique ideas to life through code.</p>
+            <p>Hello! I'm Devansh Deepak, a passionate web developer dedicated to creating engaging and functional websites. With a love for technology and design, I strive to bring unique ideas to life through my work.</p>
         </div>
     </section>
 
@@ -259,15 +276,4 @@
             <h2>Contact Me</h2>
             <form id="contact-form">
                 <input type="text" id="name" placeholder="Name" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <textarea id="message" placeholder="Message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Devansh Deepak. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+                <input type="email" id="email" placeholder="
