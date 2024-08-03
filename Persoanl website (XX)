@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire King</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: #ff4500;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #ff4500;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 1rem 0;
+            color: #ff4500;
+        }
+
+        p {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: #1f1f1f;
+            padding: 1rem;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #ff4500;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input, textarea, button {
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            background-color: #1f1f1f;
+            color: #ffffff;
+        }
+
+        button {
+            background-color: #ff4500;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff6347;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 1rem;
+            color: #ffffff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("contact-form");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert("Message sent successfully!");
+                form.reset();
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>Fire King</h1>
+    </header>
+
+    <section id="home" class="section">
+        <div class="container">
+            <h2>Welcome to Fire King's Domain</h2>
+            <p>Where passion meets creativity. Explore my world!</p>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hello, I'm the Fire King, a dedicated developer with a flair for creating innovative solutions. With a strong background in web development and design, I aim to build engaging and user-friendly websites.</p>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="project1.jpg" alt="Project 1">
+                    <p>Project 1</p>
+                </div>
+                <div class="card">
+                    <img src="project2.jpg" alt="Project 2">
+                    <p>Project 2</p>
+                </div>
+                <div class="card">
+                    <img src="project3.jpg" alt="Project 3">
+                    <p>Project 3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <textarea id="message" placeholder="Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Fire King. All rights reserved.</p>
+    </footer>
+</body>
+</html>
