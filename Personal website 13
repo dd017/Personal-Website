@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #3f51b5;
+            padding: 1rem 0;
+            text-align: center;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: 0.1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin: 1rem 0;
+            color: #3f51b5;
+        }
+
+        p {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input, textarea, button {
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input, textarea {
+            background-color: #e0e0e0;
+        }
+
+        button {
+            background-color: #3f51b5;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #303f9f;
+        }
+
+        footer {
+            background-color: #3f51b5;
+            text-align: center;
+            padding: 1rem;
+            color: #ffffff;
+        }
+
+        .container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid #3f51b5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>Devansh Deepak</h1>
+    </header>
+
+    <section id="home" class="section">
+        <div class="container">
+            <img src="student.jpg" alt="Devansh Deepak">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Hi, I'm Devansh Deepak, a high school student with a passion for learning and exploring new things. This is my personal website where I showcase my projects, hobbies, and share a bit about myself.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>School Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="project1.jpg" alt="Project 1">
+                    <p>Science Fair Project</p>
+                </div>
+                <div class="card">
+                    <img src="project2.jpg" alt="Project 2">
+                    <p>History Presentation</p>
+                </div>
+                <div class="card">
+                    <img src="project3.jpg" alt="Project 3">
+                    <p>Art Exhibition</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hobbies" class="section">
+        <div class="container">
+            <h2>Hobbies</h2>
+            <p>In my free time, I enjoy a variety of hobbies such as painting, playing the guitar, and coding. I believe that having diverse interests helps me stay creative and balanced.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <textarea id="message" placeholder="Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Devansh Deepak. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("contact-form");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert("Message sent successfully!");
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>
