@@ -11,19 +11,20 @@
         body {
             margin: 0;
             font-family: 'Raleway', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
             color: #333;
             overflow-x: hidden;
         }
 
         header {
-            background-color: #3f51b5;
+            background-color: #673ab7;
             padding: 1rem 0;
             text-align: center;
             color: #fff;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
@@ -31,6 +32,7 @@
             font-size: 2.5rem;
             margin: 0;
             letter-spacing: 0.1rem;
+            animation: glow 1.5s infinite alternate;
         }
 
         nav ul {
@@ -42,45 +44,61 @@
         }
 
         nav ul li {
-            margin: 0 1rem;
+            margin: 0 1.5rem;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
+            padding: 0.5rem;
         }
 
         nav ul li a:hover {
             color: #ffeb3b;
+            transform: translateY(-2px);
         }
 
         .section {
             padding: 4rem 2rem;
             text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            position: relative;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         h2 {
-            font-size: 2.5rem;
-            margin: 1rem 0;
-            color: #3f51b5;
+            font-size: 2.8rem;
+            margin: 1.5rem 0;
+            color: #673ab7;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 4px;
+            background-color: #673ab7;
+            margin: 0.5rem auto;
+            border-radius: 2px;
         }
 
         p {
-            margin: 1rem 0;
-            font-size: 1.2rem;
-            line-height: 1.6;
+            margin: 1.5rem 0;
+            font-size: 1.25rem;
+            line-height: 1.7;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
         }
 
@@ -89,69 +107,116 @@
             padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card img {
             max-width: 100%;
             border-radius: 10px;
             margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .card img:hover {
+            transform: scale(1.05);
         }
 
         .card p {
             margin: 0;
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             color: #333;
         }
 
         .card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         form {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         input, textarea, button {
             padding: 1rem;
             border: none;
-            border-radius: 5px;
-            font-size: 1rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            background-color: #e0e0e0;
+            color: #333;
+            transition: background-color 0.3s, border-color 0.3s;
         }
 
-        input, textarea {
-            background-color: #e0e0e0;
+        input:focus, textarea:focus {
+            background-color: #d0d0d0;
+            border-color: #673ab7;
         }
 
         button {
-            background-color: #3f51b5;
+            background-color: #673ab7;
             color: #ffffff;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 8px;
         }
 
         button:hover {
-            background-color: #303f9f;
+            background-color: #5e35b1;
+            transform: scale(1.05);
         }
 
         footer {
-            background-color: #3f51b5;
+            background-color: #673ab7;
             text-align: center;
             padding: 1rem;
             color: #ffffff;
         }
 
         .container img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1rem;
-            border: 4px solid #3f51b5;
+            border: 4px solid #673ab7;
+            transition: transform 0.3s;
+        }
+
+        .container img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 12px #ffeb3b, 0 0 24px #ffeb3b, 0 0 36px #ffeb3b, 0 0 48px #ffeb3b;
+            }
+            to {
+                text-shadow: 0 0 24px #fff176, 0 0 36px #fff176, 0 0 48px #fff176, 0 0 60px #fff176;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("contact-form");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert("Message sent successfully!");
+                form.reset();
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -216,16 +281,5 @@
     <footer>
         <p>&copy; 2024 Devansh Deepak. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const form = document.getElementById("contact-form");
-            form.addEventListener("submit", function(event) {
-                event.preventDefault();
-                alert("Message sent successfully!");
-                form.reset();
-            });
-        });
-    </script>
 </body>
 </html>
